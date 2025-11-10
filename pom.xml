@@ -5,7 +5,7 @@
 
     <groupId>prz.edu.pl.example</groupId>
     <artifactId>Example</artifactId>
-    <version>1.0.${github.run_number}</version>
+    <version>1.0.${RUN_NUMBER}</version>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
