@@ -7,18 +7,24 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Java
+      - name: Set up Java for publishing
         uses: actions/setup-java@v4
         with:
-          java-version: '21'
           distribution: 'temurin'
+          java-version: '21'
           server-id: github
           settings-path: ${{ github.workspace }}
+          gpg-private-key: ""
+          gpg-passphrase: ""
 
       - name: Publish package
-        run: mvn deploy -DskipTests
+        run: mvn -B deploy -DskipTests
         env:
-          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
