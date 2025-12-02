@@ -1,7 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <groupId>prz.edu.pl.client</groupId>
+    <artifactId>client-app</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -9,15 +14,21 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <groupId>prz.edu.pl.zastosowania.example</groupId>
-    <artifactId>example</artifactId>
-    <version>1.0.2-dev</version>
-
-
-    <distributionManagement>
+    <!-- GitHub Packages repo -->
+    <repositories>
         <repository>
             <id>github</id>
             <url>https://maven.pkg.github.com/kkkucia/Zastosowania-Informatyki</url>
         </repository>
-    </distributionManagement>
+    </repositories>
+
+    <!-- biblioteka -->
+    <dependencies>
+        <dependency>
+            <groupId>prz.edu.pl.zastosowania.example</groupId>
+            <artifactId>example</artifactId>
+            <version>1.0.11</version>
+        </dependency>
+    </dependencies>
+
 </project>
